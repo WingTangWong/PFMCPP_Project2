@@ -16,23 +16,30 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+   * Integer 
+   * Character
+   * Boolean
+   * Floating Point
+   * Double Floating Point
+   * Void 
+   * Wide Character
+
+
+
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
         just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
         'void' is a return type. you do not need to declare 3 variables of type 'void'.
     at the end of the function, pass each variable to the ignoreUnused function
- 
+
+   
+
+
+
+
 3) write out 10 functions
     each declaration should have a random number of parameters in the function parameter list.
     add { ignoreUnused( ); } after each declaration in place of the closing semicolon
@@ -65,9 +72,37 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+   
+    // ====================================== 
+    // WingTangWong's entries 
+    // ====================================== 
     
+    // Integers
+    int numberOfCars       = 32;
+    int numberOfSpareTires = 8192;
+    int numberOfBolts      = 16384;
+
+    // Character
+    char letterOfLastName  = 'w';
+    char letterOfGender    = 'm';
+    char letterOfFailGrade = 'f';
+
+    // Boolean
+    bool isItemBurning     = true;
+    bool isItemWet         = false;
+    bool isItemFull        = false;
+
+    // Floating Point
+    float realPiValue     = 3.14159;
+    float realRepeatValue = 1.18181;   // (13.0/11.0) = 1.18181818181818181818
+    float realPercentage  = 0.158673;  // (1234/7777) = 0.15867301015815867301
+
+    // Double Floating Point
+    double longerPiValue     = 3.14159265358979323; 
+    double longerRepeatValue = 1.18181818181818181; // (  13.0/  11.0)
+    double longerPercentage  = 0.15867301015815867; // (1234.0/7777.0)
     
-    
+
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 }
 /*

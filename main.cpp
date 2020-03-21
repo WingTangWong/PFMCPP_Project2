@@ -19,15 +19,12 @@ video: Chapter 2 - Part 3
 
 
 
-   * Integer 
-   * Character
-   * Boolean
-   * Floating Point
-   * Double Floating Point
-   * Void 
-   * Wide Character
-
-
+   * int
+   * char
+   * bool
+   * float
+   * double
+   * void
 
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
@@ -110,21 +107,7 @@ void variableDeclarations()
     double longerPercentage  = 0.15867301015815867; // (1234.0/7777.0)
 
     // Ignore them since they are unused
-    ignoreUnused(numberOfCars);
-    ignoreUnused(numberOfSpareTires);
-    ignoreUnused(numberOfBolts);
-    ignoreUnused(letterOfLastName);
-    ignoreUnused(letterOfGender);
-    ignoreUnused(letterOfFailGrade);
-    ignoreUnused(isItemBurning);
-    ignoreUnused(isItemWet);
-    ignoreUnused(isItemFull);
-    ignoreUnused(realPiValue);
-    ignoreUnused(realRepeatValue);
-    ignoreUnused(realPercentage);
-    ignoreUnused(longerPiValue);
-    ignoreUnused(longerRepeatValue);
-    ignoreUnused(longerPercentage);
+    ignoreUnused(numberOfCars, numberOfSpareTires, numberOfBolts, letterOfLastName, letterOfGender, letterOfFailGrade, isItemBurning, isItemWet, isItemFull, realPiValue, realRepeatValue, realPercentage, longerPiValue, longerRepeatValue, longerPercentage);
 
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 }
@@ -143,7 +126,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  1) Integer 
  */
 
-int getCountOfCarsRented( int rentalLocation=0, int carType = 0)
+int getCountOfCarsRented( int carType , int rentalLocation = 0)
 {
    ignoreUnused(rentalLocation, carType);
    return {};
@@ -155,7 +138,7 @@ int getCountOfCarsRented( int rentalLocation=0, int carType = 0)
  2) Character 
  */
 
-char getGenderOfRenter( int rentalLocation=0, int rentalReservationNumber=0)
+char getGenderOfRenter( int rentalReservationNumber, int rentalLocation = 0)
 {
    ignoreUnused(rentalLocation, rentalReservationNumber);
    return {};
@@ -165,7 +148,7 @@ char getGenderOfRenter( int rentalLocation=0, int rentalReservationNumber=0)
  3) Boolean
  */
 
-bool isCarRented( int rentalLocation=0, int rentalCarID=0, float rentalRemainingTime=0 )
+bool isCarRented( int rentalCarID, float rentalRemainingTime, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, rentalCarID, rentalRemainingTime);
    return {};
@@ -176,7 +159,7 @@ bool isCarRented( int rentalLocation=0, int rentalCarID=0, float rentalRemaining
  4) Floating Point
  */
 
-float rentalTimeRemaining( int rentalLocation=0, int rentalReservationNumber=0)
+float rentalTimeRemaining( int rentalReservationNumber, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, rentalReservationNumber);
    return {};
@@ -187,7 +170,7 @@ float rentalTimeRemaining( int rentalLocation=0, int rentalReservationNumber=0)
  5) Double Floating Point
  */
 
-double rentalTimeTally( int rentalLocation=0, bool useFilters=false, int filterID=0)
+double rentalTimeTally( int filterID, bool useFilters=false, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, useFilters, filterID);
    return {};
@@ -198,7 +181,7 @@ double rentalTimeTally( int rentalLocation=0, bool useFilters=false, int filterI
  6) Void
  */
 
-void queueReportGeneration( int rentalLocation=0, double startTime=0.00, double endTime=0.00 )
+void queueReportGeneration( double startTime, double endTime, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, startTime, endTime);
 }
@@ -219,7 +202,7 @@ int getReportQueueCount( int rentalLocation=0)
  8) int
  */
 
-int registerNewCar( int rentalLocation=0, int carType=0, float carAge=0.00, char carColor='b', double carMilleage=0.00 )
+int registerNewCar( int carType, float carAge, char carColor, double carMilleage, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, carType, carAge, carColor, carMilleage);
    return {};
@@ -229,7 +212,7 @@ int registerNewCar( int rentalLocation=0, int carType=0, float carAge=0.00, char
  9) double
  */
 
-double carWeight( int rentalLocation=0, int carID=0)
+double carWeight( int carID, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation, carID);
    return {};
@@ -239,7 +222,7 @@ double carWeight( int rentalLocation=0, int carID=0)
  10)
  */
 
-char rentalExperienceRating( int rentalLocation=0, int carID=0, int rentalReservationNumber=0)
+char rentalExperienceRating( int carID, int rentalReservationNumber, int rentalLocation=0)
 {
    ignoreUnused(rentalLocation,carID,rentalReservationNumber);
    return {};
@@ -252,35 +235,35 @@ int main()
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
       auto carRented = rentACar(6, 2); 
     
-    //1) int getCountOfCarsRented( int rentalLocation=0, int carType = 0)
-      auto numberOfCarsRented = getCountOfCarsRented( 42, 6);
+    //1) int getCountOfCarsRented
+      auto numberOfCarsRented = getCountOfCarsRented( 6, 42);
 
-    //2) char getGenderOfRenter( int rentalLocation=0, int rentalReservationNumber=0)
-      auto thatRentersGender = getGenderOfRenter( 3011, 12342);
+    //2) char getGenderOfRenter
+      auto thatRentersGender = getGenderOfRenter( 12342, 3011);
 
-    //3) bool isCarRented( int rentalLocation=0, int rentalCarID=0, float rentalRemainingTime=0 )
-      auto doTheyHaveMyTesla = isCarRented( 913, 11399, 3.331f);
+    //3) bool isCarRented
+      auto doTheyHaveMyTesla = isCarRented( 11399, 3.331f, 913);
 
-    //4) float rentalTimeRemaining( int rentalLocation=0, int rentalReservationNumber=0)
-      auto needMoreTimeOrNot = rentalTimeRemaining( 1434, 3112);
+    //4) float rentalTimeRemaining
+      auto needMoreTimeOrNot = rentalTimeRemaining( 3112, 1434);
 
-    //5) double rentalTimeTally( int rentalLocation=0, bool useFilters=false, int filterID=0)
-      auto timeOfRentedCars = rentalTimeTally( 917, true, 17);
+    //5) double rentalTimeTally
+      auto timeOfRentedCars = rentalTimeTally( 17, true, 3221);
 
-    //6) void queueReportGeneration( int rentalLocation=0, double startTime=0.00, double endTime=0.00 )
-      queueReportGeneration( 777, 12123122.4413123,12123999.0);
+    //6) void queueReportGeneration
+      queueReportGeneration( 12123122.4413123,12123999.0, 777);
 
-    //7) int getReportQueueCount( int rentalLocation=0)
+    //7) int getReportQueueCount
       auto reportBackLog = getReportQueueCount( 777 );
 
-    //8) int registerNewCar( int rentalLocation=0, int carType=0, float carAge=0.00, char carColor='b', double carMilleage=0.00 )
-      auto registedCarID = registerNewCar( 777, 9, 413.31f, 'r', 313319.31314);
+    //8) int registerNewCar
+      auto registedCarID = registerNewCar( 9, 413.31f, 'r', 313319.31314, 777);
 
-    //9) double carWeight( int rentalLocation=0, int carID=0)
-      auto carWeightInGramsWhy = carWeight( 777, 23241);
+    //9) double carWeight
+      auto carWeightInGramsWhy = carWeight( 23241, 777);
 
-    //10) char rentalExperienceRating( int rentalLocation=0, int carID=0, int rentalReservationNumber=0)
-      auto howDidWeDoThisTime = rentalExperienceRating( 777, 23241, 12342);
+    //10) char rentalExperienceRating
+      auto howDidWeDoThisTime = rentalExperienceRating( 23241, 12342, 777);
 
     
     ignoreUnused(carRented);

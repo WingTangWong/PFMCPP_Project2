@@ -36,8 +36,6 @@ video: Chapter 2 - Part 3
    * Done below in the function 
 
 
-
-
 3) write out 10 functions
     each declaration should have a random number of parameters in the function parameter list.
     add { ignoreUnused( ); } after each declaration in place of the closing semicolon

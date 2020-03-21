@@ -36,6 +36,7 @@ video: Chapter 2 - Part 3
     at the end of the function, pass each variable to the ignoreUnused function
 
    
+   * Done below in the function 
 
 
 
@@ -45,7 +46,10 @@ video: Chapter 2 - Part 3
     add { ignoreUnused( ); } after each declaration in place of the closing semicolon
     pass each of your function parameters to the ignoreUnused function. 
     if your function returns something other than void, add 'return {};' at the end of it.
-    
+  
+
+
+
 4) provide default values for an arbitrary number of parameters in the function parameter list.
     When naming your parameters, choose names that are relevant to the task implied by the function's name.
     
@@ -78,33 +82,50 @@ void variableDeclarations()
     // ====================================== 
     
     // Integers
-    int numberOfCars       = 32;
-    int numberOfSpareTires = 8192;
-    int numberOfBolts      = 16384;
+    int    numberOfCars       = 32;
+    int    numberOfSpareTires = 8192;
+    int    numberOfBolts      = 16384;
 
     // Character
-    char letterOfLastName  = 'w';
-    char letterOfGender    = 'm';
-    char letterOfFailGrade = 'f';
+    char   letterOfLastName  = 'w';
+    char   letterOfGender    = 'm';
+    char   letterOfFailGrade = 'f';
 
     // Boolean
-    bool isItemBurning     = true;
-    bool isItemWet         = false;
-    bool isItemFull        = false;
+    bool   isItemBurning     = true;
+    bool   isItemWet         = false;
+    bool   isItemFull        = false;
 
     // Floating Point
-    float realPiValue     = 3.14159;
-    float realRepeatValue = 1.18181;   // (13.0/11.0) = 1.18181818181818181818
-    float realPercentage  = 0.158673;  // (1234/7777) = 0.15867301015815867301
+    float  realPiValue     = 3.14159;
+    float  realRepeatValue = 1.18181;   // (13.0/11.0) = 1.18181818181818181818
+    float  realPercentage  = 0.158673;  // (1234/7777) = 0.15867301015815867301
 
     // Double Floating Point
     double longerPiValue     = 3.14159265358979323; 
     double longerRepeatValue = 1.18181818181818181; // (  13.0/  11.0)
     double longerPercentage  = 0.15867301015815867; // (1234.0/7777.0)
-    
+
+    // Ignore them since they are unused
+    ignoreUnused(numberOfCars);
+    ignoreUnused(numberOfSpareTires);
+    ignoreUnused(numberOfBolts);
+    ignoreUnused(letterOfLastName);
+    ignoreUnused(letterOfGender);
+    ignoreUnused(letterOfFailGrade);
+    ignoreUnused(isItemBurning);
+    ignoreUnused(isItemWet);
+    ignoreUnused(isItemFull);
+    ignoreUnused(realPiValue);
+    ignoreUnused(realRepeatValue);
+    ignoreUnused(realPercentage);
+    ignoreUnused(longerPiValue);
+    ignoreUnused(longerRepeatValue);
+    ignoreUnused(longerPercentage);
 
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 }
+
 /*
  10 functions
  example:

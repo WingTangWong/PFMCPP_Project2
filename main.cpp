@@ -60,6 +60,8 @@ video: Chapter 2 - Part 3
         b) if the function returned anything, store it in a local variable via the 'auto' keyword.
         c) pass the local variable to ignoreUnused() as you did in variableDeclarations()
     see main() for an example of this.
+
+   * Done below in the function 
  
  click the [run] button.  Clear up any errors or warnings as best you can.
  
